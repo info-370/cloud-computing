@@ -32,10 +32,7 @@ def get_avg_pop(city):
     Given a city name, gets the average population of a census
     tract in that city (total population / number of census tracts)
     """
-    df = get_census_data(city)
-    num_tracts = 0
-    total_pop = 0
-    for _, pop in df["pop"].iteritems():
-        total_pop += pop;
-        num_tracts += 1
-    return total_pop / num_tracts
+    df = get_census_data(city) # Makes a call to get the city data from S3
+
+    # Calculate and return the average census tract population
+    return 0
