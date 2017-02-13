@@ -4,6 +4,7 @@ import threading
 cities = ["baltimore", "charleston", "chicago", "columbus", "dayton",
           "denver", "kc", "memphis", "milwaukee", "ok_city", "pittsburgh",
           "st_louis", "syracuse", "wichita"]
+
 url = "http://info370-lab06.us-west-2.elasticbeanstalk.com"
 
 def get_avg(c):

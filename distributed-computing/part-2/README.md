@@ -32,4 +32,9 @@ Leave this section blank
 Leave this section with defaults
 
 ### Notes
-* Once you launch your instance, it can take 5-10 minutes for your environment to be ready. While you wait, I suggest you talk with your final project group so you don't have to spend too much time sitting around.
+* Once you launch your instance, it can take 5-10 minutes for your environment to be ready. While you wait, I suggest you talk with your final project group or help those around you so you don't have to spend too much time sitting around.
+
+## Testing
+To test your solution, I have written a small script in `test.py`. In this file you will need to change the global variable `url` to whatever the url of your elastic beanstalk cluster is (the url can be found at the top of your elastic beanstalk dashboard for that environment).
+
+When you are done, feel free to talk with your final project group.
