@@ -1,6 +1,6 @@
 import boto3 as aws
 from botocore.handlers import disable_signing
-import pandas as pd
+import csv
 import sys
 
 # Check for python version to use correct library
@@ -24,8 +24,14 @@ def get_census_data(city):
     res = obj.get()
     raw_data = res['Body'].read().decode('UTF-8')
     data = StringIO(raw_data)
-    df = pd.read_csv(data)
-    return df
+
+    reader = csv.DictReader(data)
+
+    result = {}
+    for row in reader:
+        for column, value in row.items():
+            result.setdefault(column, []).append(value)
+    return result
 
 def get_avg_pop(city):
     """
@@ -37,7 +43,7 @@ def get_avg_pop(city):
     # Calculate and return the average census tract population
     num_tracts = 0
     total_pop = 0
-    for _, pop in df["pop"].iteritems():
-        total_pop += pop;
+    for pop in df["pop"]:
+        total_pop += int(pop);
         num_tracts += 1
     return total_pop / num_tracts
