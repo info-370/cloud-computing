@@ -35,4 +35,5 @@ def get_avg_pop(city):
     df = get_census_data(city) # Makes a call to get the city data from S3
 
     # Calculate and return the average census tract population
+
     return df['pop'].mean()
